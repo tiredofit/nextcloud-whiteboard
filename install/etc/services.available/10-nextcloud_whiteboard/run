@@ -8,3 +8,6 @@ check_container_initialized
 liftoff
 
 print_start "Starting Nextcloud Whiteboard Collaboration Server"
+cd /app
+export NODE_ENV=production
+npm run server:start
