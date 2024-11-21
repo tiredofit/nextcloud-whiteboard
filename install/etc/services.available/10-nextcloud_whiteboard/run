@@ -1,0 +1,10 @@
+#!/command/with-contenv bash
+
+source /assets/functions/00-container
+prepare_service both
+
+PROCESS_NAME="whiteboard"
+check_container_initialized
+liftoff
+
+print_start "Starting Nextcloud Whiteboard Collaboration Server"
