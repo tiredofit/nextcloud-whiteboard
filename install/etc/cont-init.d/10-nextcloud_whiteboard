@@ -4,4 +4,11 @@ source /assets/functions/00-container
 prepare_service
 PROCESS_NAME="nextcloud-whiteboard"
 
+transform_file_var \
+                    JWT_SECRET_KEY \
+                    NEXTCLOUD_URL
+
+sanity_var NEXTCLOUD_URL "Full URL to Nextcloud"
+sanity_var JWT_SECRET_KEY "Shared Secret for communication"
+
 liftoff
