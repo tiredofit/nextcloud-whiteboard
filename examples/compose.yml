@@ -15,6 +15,8 @@
       - JWT_SECRET_KEY=${WHITEBOARD_JWT_SECRET_KEY_T}
       # alternatively redis - for large environments behind loadbalancers
       - STORAGE_STRATEGY=lru
+      # process needs a place where it can mkdir that dir.
+      - BACKUP_DIR=/tmp/backup
     networks:
       services: 
          ipv4_address: ${WHITEBOARD_IP_T}
