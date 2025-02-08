@@ -1,2 +1,10 @@
 #!/command/with-contenv bash
 
+_nw_bootstrap_filesystem() {
+    if [ ! -d "${BACKUP_PATH}" ] ; then
+        mkdir -p "${BACKUP_PATH}"
+    fi
+
+    if [ "$(stat -c %U "${BACKUP_PATH}")" != "ncwhiteboard" ] ; then silent chown -R ncwhiteboard:ncwhiteboard "${BACKUP_PATH}" ; fi
+    if [ "$(stat -c %a "${BACKUP_PATH}")" != "755" ] ; then chmod -R 755 "${BACKUP_PATH}" ; fi
+}

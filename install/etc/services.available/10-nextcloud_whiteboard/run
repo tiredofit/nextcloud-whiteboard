@@ -10,6 +10,7 @@ transform_file_var \
                     JWT_SECRET_KEY \
                     NEXTCLOUD_URL
 
+export BACKUP_DIR=${BACKUP_PATH}
 export NODE_ENV=production
 export NEXTCLOUD_URL=${NEXTCLOUD_URL}
 export JWT_SECRET_KEY=${JWT_SECRET_KEY}

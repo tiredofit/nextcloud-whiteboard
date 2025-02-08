@@ -6,19 +6,24 @@
       - traefik.enable=true
       - traefik.http.routers.wb-nextcloud-example-com.rule=Host(`wb.your.domain`)
       - traefik.http.services.wb-nextcloud-example-com.loadbalancer.server.port=3002
+    volumes:
+      - ./backup:/backup
     environment:
       - TIMEZONE=Europe/Berlin # adjust
+
       - CONTAINER_NAME=nextcloud-whiteboard
       - CONTAINER_ENABLE_LOGSHIPPING=FALSE
       - CONTAINER_ENABLE_MONITORING=FALSE
       - NEXTCLOUD_URL=https://nextcloud.your.domain
+
       - JWT_SECRET_KEY=${WHITEBOARD_JWT_SECRET_KEY_T}
       # alternatively redis - for large environments behind loadbalancers
       - STORAGE_STRATEGY=lru
       # process needs a place where it can mkdir that dir.
-      - BACKUP_DIR=/tmp/backup
+
+      - BACKUP_PATH=/backup
     networks:
-      services: 
+      services:
          ipv4_address: ${WHITEBOARD_IP_T}
       traefik:
         ipv4_address: ${WHITEBOARD_TRAEFIK_IP_T}
