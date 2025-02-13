@@ -4,7 +4,6 @@ source /assets/functions/00-container
 prepare_service
 PROCESS_NAME="nextcloud-whiteboard"
 
-bootstrap_file
 transform_file_var \
                     JWT_SECRET_KEY \
                     NEXTCLOUD_URL
