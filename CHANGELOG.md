@@ -1,4 +1,9 @@
 ## 0.0.2 2025-02-08 <dave at tiredofit dot ca>
+   ### updated
+     - whiteboard 1.1.0
+     - Alpine 21
+
+## 0.0.2 2025-02-08 <dave at tiredofit dot ca>
 
    ### Added
       - Add BACKUP_PATH environment variable with default to /backup

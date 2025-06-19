@@ -1,5 +1,5 @@
 ARG DISTRO="alpine"
-ARG DISTRO_VARIANT="3.20"
+ARG DISTRO_VARIANT="3.21"
 
 FROM docker.io/tiredofit/${DISTRO}:${DISTRO_VARIANT}
 LABEL maintainer="Dave Conroy (github.com/tiredofit)"
@@ -7,7 +7,7 @@ LABEL maintainer="Dave Conroy (github.com/tiredofit)"
 ARG NEXTCLOUD_WHITEBOARD_VERSION
 ARG NEXTCLOUD_WHITEBOARD_REPO_URL
 
-ENV NEXTCLOUD_WHITEBOARD_VERSION=${NEXTCLOUD_WHITEBOARD_VERSION:-"v1.0.5"} \
+ENV NEXTCLOUD_WHITEBOARD_VERSION=${NEXTCLOUD_WHITEBOARD_VERSION:-"v1.1.0"} \
     NEXTCLOUD_WHITEBOARD_REPO_URL=${NEXTCLOUD_WHITEBOARD_REPO_URL:-"https://github.com/nextcloud/whiteboard"} \
     CONTAINER_NAME=nextcloud-app \
     IMAGE_NAME="tiredofit/nextcloud-whiteboard" \
